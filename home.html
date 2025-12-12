@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pak Abu Jeruk | Jeruk Buah Segar Terengganu</title>
+    <style>
+        /* ==================== 
+           BASIC & FONT SETUP
+           ==================== */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #006400;    /* Dark Green */
+            --secondary-color: #90EE90;  /* Light Green */
+            --accent-color: #FFD700;     /* Gold/Emas */
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #008000; /* Slightly lighter green on hover */
+        }
+
+        /* ==================== 
+           HEADER & NAV
+           ==================== */
+        header {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--accent-color); /* Logo in Gold/Emas */
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* ==================== 
+           HERO SECTION
+           ==================== */
+        #hero {
+            background-color: var(--secondary-color);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            color: var(--text-dark);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* ==================== 
+           ABOUT SECTION (Pengenalan)
+           ==================== */
+        #about {
+            padding: 60px 0;
+            background-color: var(--text-light);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Placeholder for a professional image of Pak Abu or the factory */
+        }
+        
+        /* Highlighted text within the description */
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* ==================== 
+           PRODUCTS SECTION
+           ==================== */
+        #products {
+            padding: 60px 0;
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background-color: var(--text-light);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card h3 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+        }
+
+        .product-image-placeholder {
+            height: 150px;
+            background-color: #e0f2f1; /* Light turquoise for placeholder */
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* ==================== 
+           CONTACT SECTION
+           ==================== */
+        #contact {
+            padding: 60px 0;
+            background-color: var(--text-light);
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-info a {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================== 
+           FOOTER
+           ==================== */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        footer span {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* ==================== 
+           MEDIA QUERIES (Mobile View)
+           ==================== */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+                display: inline-block;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">Pak Abu Jeruk</div>
+            <nav class="nav-links">
+                <a href="#about">Pengenalan</a>
+                <a href="#products">Produk Kami</a>
+                <a href="#contact">Hubungi Kami</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Rasa Terengganu, Kesegaran Semulajadi</h1>
+            <p>Jeruk buah-buahan premium buatan tangan dari Terengganu. Nikmati kerangupan dan rasa masam manis yang tiada tandingan. Pilihan terbaik untuk santapan keluarga!</p>
+            <a href="#products" class="btn">LIHAT PRODUK SEKARANG</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>🥇 Pengenalan Syarikat</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Sejak tahun 20XX, **Pak Abu Jeruk** telah menjadi sinonim dengan kualiti dan kesegaran dalam industri jeruk buah di Pantai Timur. Kami bermula dari sebuah perniagaan kecil-kecilan di Terengganu, berpegang pada resipi turun-temurun dan komitmen untuk hanya menggunakan buah-buahan segar berkualiti tinggi.</p>
+                    <p>Kami percaya bahawa rahsia rasa jeruk yang lazat terletak pada pemilihan buah yang tepat dan proses pemeraman yang teliti. Setiap botol jeruk Pak Abu adalah hasil kerja tangan yang <span class="highlight">penuh dedikasi</span>, memastikan kerangupan dan keseimbangan rasa masam manis yang sempurna.</p>
+                    <p>Matlamat kami adalah untuk membawa rasa asli Terengganu ini ke setiap pelosok Malaysia, menjadikannya pilihan utama seisi keluarga.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x300?text=Imej+Pak+Abu+Jeruk" alt="Pak Abu sedang memproses Jeruk">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2>🥭 Pilihan Jeruk Premium Kami</h2>
+            <p>Dibuat dengan kasih sayang, diperam dengan sempurna.</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-placeholder">
+                        Gambar Jeruk Mangga
+                    </div>
+                    <h3>Jeruk Mangga Rangup</h3>
+                    <p>Mangga muda terpilih, kerangupan yang terjamin. Jeruk paling laris!</p>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-placeholder">
+                        Gambar Jeruk Salak
+                    </div>
+                    <h3>Jeruk Salak Masam Manis</h3>
+                    <p>Kombinasi rasa unik salak yang seimbang dengan kuah masam manis pedas.</p>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-placeholder">
+                        Gambar Jeruk Kedondong
+                    </div>
+                    <h3>Jeruk Kedondong</h3>
+                    <p>Kedondong segar yang dijeruk untuk rasa 'kick' yang menyegarkan.</p>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-placeholder">
+                        Gambar Jeruk Campur
+                    </div>
+                    <h3>Pek Campuran Istimewa</h3>
+                    <p>Cuba semua perisa dalam satu pek! Sesuai untuk hadiah atau jamuan.</p>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>📞 Hubungi Pak Abu</h2>
+            <p>Ada soalan, pesanan khas, atau berminat menjadi pengedar? Kami sedia membantu!</p>
+            
+            <div class="contact-info">
+                <a href="tel:+60123456789">☎️ Telefon: +60 12-345 6789</a>
+                <a href="mailto:sales@pakabujeruk.com">📧 Emel: sales@pakabujeruk.com</a>
+                <p>📍 **Alamat Kilang/Pejabat:** [Masukkan alamat penuh di Terengganu di sini]</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 Pak Abu Jeruk. Dibuat dengan cinta dari <span>Terengganu</span>.
+        </div>
+    </footer>
+
+</body>
+</html>
