@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pak Abu Jeruk | Jeruk Buah Segar Terengganu</title>
+    <title>Jeruk Pak Abu | Jeruk Buah Tradisi Terengganu</title>
+    
+    <meta name="description" content="Jeruk buah-buahan tradisi Terengganu, dibuat secara asli dan dijamin kesegaran. Cuba Jeruk Mangga Asli, Nenas Pedas Manis, dan banyak lagi!">
+    <meta name="keywords" content="jeruk, jeruk buah, jeruk terengganu, jeruk pak abu, jeruk mangga, jeruk nenas">
+    <meta name="author" content="Jeruk Pak Abu">
+
+    <meta property="og:title" content="Jeruk Pak Abu | Jeruk Buah Tradisi Terengganu">
+    <meta property="og:description" content="Rasa asli Terengganu. Jeruk buah premium, rangup dan menyelerakan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lamanweb.com/">
+    <meta property="og:image" content="https://www.ikma.edu.my/images/dokumen/penerbitan/demensi/demensi-koop-72/DIMENSI-KOOP-BIL-72-5.pdf">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* ==================== 
-           BASIC & FONT SETUP
+           VARIABLES & RESET
            ==================== */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         :root {
-            --primary-color: #006400;    /* Dark Green */
-            --secondary-color: #90EE90;  /* Light Green */
-            --accent-color: #FFD700;     /* Gold/Emas */
-            --text-dark: #333;
-            --text-light: #fff;
+            /* Warna Lembut (Oren, Kuning, Krim) */
+            --color-primary: #FF8C00;      /* Oren Terang */
+            --color-secondary: #FFD700;    /* Emas / Kuning Aksen */
+            --color-background: #FFF8E1;   /* Krim Sangat Lembut */
+            --color-text-dark: #333;
+            --color-text-light: #fff;
+            --color-link: #d46500;
+            --padding-section: 40px 0;
         }
 
         * {
@@ -27,339 +41,490 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: #f8f8f8;
+            color: var(--color-text-dark);
+            background-color: var(--color-background);
+            scroll-behavior: smooth;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 0;
         }
 
         h1, h2, h3 {
             font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #008000; /* Slightly lighter green on hover */
+        section {
+            padding: var(--padding-section);
         }
 
         /* ==================== 
-           HEADER & NAV
+           BUTTONS & UTILITIES
+           ==================== */
+        .btn {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e67e00; 
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: var(--color-text-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f7d242;
+        }
+
+        /* ==================== 
+           HEADER & NAVIGATION
            ==================== */
         header {
-            background-color: var(--primary-color);
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 0;
         }
 
         .logo {
-            font-size: 1.8em;
+            font-size: 1.6em;
             font-weight: 700;
-            color: var(--accent-color); /* Logo in Gold/Emas */
+            color: var(--color-secondary);
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--color-text-light);
             text-decoration: none;
-            margin-left: 25px;
+            margin-left: 20px;
             font-weight: 400;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--color-secondary);
+        }
+        
+        /* Mobile Menu Icon (Sembunyi secara default) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: var(--color-text-light);
         }
 
         /* ==================== 
            HERO SECTION
            ==================== */
-        #hero {
-            background-color: var(--secondary-color);
+        #home {
+            background-color: #FFFAF0; /* Floral White */
             padding: 80px 0;
             text-align: center;
+            border-bottom: 5px solid var(--color-secondary);
         }
 
-        #hero h1 {
-            font-size: 3em;
+        #home h1 {
+            font-size: 2.5em; /* Mobile size */
             margin-bottom: 10px;
-            color: var(--primary-color);
         }
 
-        #hero p {
+        #home .tagline {
             font-size: 1.2em;
-            color: var(--text-dark);
-            max-width: 700px;
+            color: var(--color-text-dark);
+            max-width: 600px;
             margin: 0 auto 30px;
+            font-weight: 400;
         }
 
         /* ==================== 
-           ABOUT SECTION (Pengenalan)
+           TENTANG KAMI (ABOUT)
            ==================== */
         #about {
-            padding: 60px 0;
-            background-color: var(--text-light);
-        }
-
-        .about-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-image {
-            flex: 1;
-            max-width: 400px;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            /* Placeholder for a professional image of Pak Abu or the factory */
+            background-color: var(--color-background);
+            text-align: center;
         }
         
-        /* Highlighted text within the description */
-        .highlight {
-            color: var(--primary-color);
+        #about h2 {
+             color: var(--color-text-dark);
+        }
+
+        #about p {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .location-highlight {
             font-weight: 600;
+            color: var(--color-primary);
         }
 
         /* ==================== 
-           PRODUCTS SECTION
+           PRODUK SECTION
            ==================== */
         #products {
-            padding: 60px 0;
-            background-color: var(--secondary-color);
+            background-color: #fff;
             text-align: center;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: 1fr; /* Mobile: 1 column */
+            margin-top: 30px;
         }
 
         .product-card {
-            background-color: var(--text-light);
-            border-radius: 8px;
+            background-color: var(--color-background);
+            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
-            border-bottom: 4px solid var(--primary-color);
+            text-align: left;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .product-card h3 {
-            font-size: 1.4em;
-            color: var(--primary-color);
-        }
-
-        .product-image-placeholder {
-            height: 150px;
-            background-color: #e0f2f1; /* Light turquoise for placeholder */
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border-radius: 5px;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-weight: 600;
+            background-color: #fae3c3; /* Placeholder color */
+        }
+        
+        .product-card h3 {
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 1.3em;
+            color: var(--color-primary);
+        }
+
+        .product-card .price {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--color-link);
+            margin: 10px 0;
+            display: block;
+        }
+        
+        .product-card p {
+            font-size: 0.9em;
+            margin-bottom: 20px;
         }
 
         /* ==================== 
-           CONTACT SECTION
+           TESTIMONI
            ==================== */
-        #contact {
-            padding: 60px 0;
-            background-color: var(--text-light);
+        #testimonials {
+            background-color: var(--color-secondary);
+            padding: var(--padding-section);
             text-align: center;
+            color: var(--color-text-dark);
         }
 
-        .contact-info {
-            margin-top: 30px;
+        .testimonial-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+            font-style: italic;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card h3 {
+             color: var(--color-text-dark);
+        }
+
+        .customer-name {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* ==================== 
+           HUBUNGI KAMI (CONTACT)
+           ==================== */
+        #contact {
+            background-color: var(--color-background);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        
+        .contact-form h3 {
+            text-align: left;
+        }
+
+        .contact-info h3 {
+            text-align: left;
+            margin-bottom: 20px;
         }
 
         .contact-info a {
             display: block;
-            margin-bottom: 10px;
+            color: var(--color-link);
+            text-decoration: none;
+            margin-bottom: 15px;
             font-size: 1.1em;
-            color: var(--primary-color);
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info .address {
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.8em;
+            color: var(--color-primary);
             text-decoration: none;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .social-icons a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Borang Mailto */
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 100px;
         }
 
         /* ==================== 
            FOOTER
            ==================== */
         footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
             text-align: center;
             padding: 20px 0;
             font-size: 0.9em;
         }
 
-        footer span {
-            color: var(--accent-color);
-            font-weight: 600;
+        .footer-social {
+            margin-top: 10px;
+        }
+
+        .footer-social a {
+            color: var(--color-text-light);
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+        
+        .footer-social a:hover {
+            color: var(--color-secondary);
         }
 
         /* ==================== 
-           MEDIA QUERIES (Mobile View)
+           MEDIA QUERIES (Desktop View)
            ==================== */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
+        @media (min-width: 768px) {
+            
+            #home h1 {
+                font-size: 3.5em;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Desktop: 3-5 columns */
+            }
+
+            .contact-content {
+                flex-direction: row;
+                text-align: left;
             }
             
-            .nav-links {
-                margin-top: 15px;
+            .navbar {
+                padding: 20px 0;
             }
 
-            .nav-links a {
-                margin: 0 10px;
-                display: inline-block;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .about-image {
-                margin-top: 30px;
-            }
         }
     </style>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
 </head>
 <body>
 
     <header>
         <div class="container navbar">
-            <div class="logo">Pak Abu Jeruk</div>
+            <a href="#home" class="logo">JERUK PAK ABU</a>
+            
             <nav class="nav-links">
-                <a href="#about">Pengenalan</a>
-                <a href="#products">Produk Kami</a>
-                <a href="#contact">Hubungi Kami</a>
+                <a href="#home">Beranda</a>
+                <a href="#about">Tentang Kami</a>
+                <a href="#products">Produk</a>
+                <a href="#contact">Hubungi</a>
             </nav>
-        </div>
+            
+            </div>
     </header>
 
-    <section id="hero">
+    <section id="home">
         <div class="container">
-            <h1>Rasa Terengganu, Kesegaran Semulajadi</h1>
-            <p>Jeruk buah-buahan premium buatan tangan dari Terengganu. Nikmati kerangupan dan rasa masam manis yang tiada tandingan. Pilihan terbaik untuk santapan keluarga!</p>
-            <a href="#products" class="btn">LIHAT PRODUK SEKARANG</a>
+            <h1>RANGUP! MASAM MANIS! KETAGIH!</h1>
+            <p class="tagline">Jeruk Buah Tradisi Terbaik dari Terengganu. Diperam Sempurna, Kelazatan Dijamin Sejak Gigitan Pertama.</p>
+            <a href="#products" class="btn">LIHAT & BELI SEKARANG</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2>🥇 Pengenalan Syarikat</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Sejak tahun 20XX, **Pak Abu Jeruk** telah menjadi sinonim dengan kualiti dan kesegaran dalam industri jeruk buah di Pantai Timur. Kami bermula dari sebuah perniagaan kecil-kecilan di Terengganu, berpegang pada resipi turun-temurun dan komitmen untuk hanya menggunakan buah-buahan segar berkualiti tinggi.</p>
-                    <p>Kami percaya bahawa rahsia rasa jeruk yang lazat terletak pada pemilihan buah yang tepat dan proses pemeraman yang teliti. Setiap botol jeruk Pak Abu adalah hasil kerja tangan yang <span class="highlight">penuh dedikasi</span>, memastikan kerangupan dan keseimbangan rasa masam manis yang sempurna.</p>
-                    <p>Matlamat kami adalah untuk membawa rasa asli Terengganu ini ke setiap pelosok Malaysia, menjadikannya pilihan utama seisi keluarga.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/400x300?text=Imej+Pak+Abu+Jeruk" alt="Pak Abu sedang memproses Jeruk">
-                </div>
-            </div>
+            <h2>Tentang Jeruk Pak Abu</h2>
+            <p>**Jeruk Pak Abu** bermula daripada minat mendalam Pak Abu untuk menghasilkan jeruk buah yang bukan sahaja sedap, tetapi mengekalkan kerangupan semulajadi buah. Resipi turun-temurun kami memfokuskan kepada kualiti, bermula dari pemilihan buah segar di kebun sehinggalah proses pemeraman yang teliti.</p>
+            <p>Kami bangga beroperasi dari <span class="location-highlight">Terengganu</span>, pusat tradisi makanan pantai timur, dan bertekad untuk membawa rasa warisan ini kepada anda. Setiap botol adalah hasil kerja tangan yang penuh kasih sayang.</p>
         </div>
     </section>
 
     <section id="products">
         <div class="container">
-            <h2>🥭 Pilihan Jeruk Premium Kami</h2>
-            <p>Dibuat dengan kasih sayang, diperam dengan sempurna.</p>
-
+            <h2>Pilihan Jeruk Yang Menggiurkan</h2>
             <div class="product-grid">
+                
                 <div class="product-card">
-                    <div class="product-image-placeholder">
-                        Gambar Jeruk Mangga
-                    </div>
-                    <h3>Jeruk Mangga Rangup</h3>
-                    <p>Mangga muda terpilih, kerangupan yang terjamin. Jeruk paling laris!</p>
-                    <a href="#" class="btn">Beli Sekarang</a>
+                    <img src="https://via.placeholder.com/400x200?text=Jeruk+Mangga+Asli" alt="Jeruk Mangga Asli">
+                    <h3>Jeruk Mangga Asli</h3>
+                    <p>Mangga muda yang rangup, dijeruk dengan air gula asli. Rasa klasik yang sentiasa dicari.</p>
+                    <span class="price">RM 12.00</span>
+                    <a href="https://wa.me/601121982971?text=Saya%20berminat%20dengan%20Jeruk%20Mangga%20Asli%20(RM12)" class="btn btn-secondary">PESAN VIA WHATSAPP</a>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image-placeholder">
-                        Gambar Jeruk Salak
-                    </div>
-                    <h3>Jeruk Salak Masam Manis</h3>
-                    <p>Kombinasi rasa unik salak yang seimbang dengan kuah masam manis pedas.</p>
-                    <a href="#" class="btn">Beli Sekarang</a>
+                    <img src="https://via.placeholder.com/400x200?text=Jeruk+Nenas+Pedas+Manis" alt="Jeruk Nenas Pedas Manis">
+                    <h3>Jeruk Nenas Pedas Manis</h3>
+                    <p>Nenas yang manis, ditambah sensasi pedas dari cili api. Kombinasi yang membangkitkan selera!</p>
+                    <span class="price">RM 15.00</span>
+                    <a href="https://wa.me/601121982971?text=Saya%20berminat%20dengan%20Jeruk%20Nenas%20Pedas%20Manis%20(RM15)" class="btn btn-secondary">PESAN VIA WHATSAPP</a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image-placeholder">
-                        Gambar Jeruk Kedondong
-                    </div>
-                    <h3>Jeruk Kedondong</h3>
-                    <p>Kedondong segar yang dijeruk untuk rasa 'kick' yang menyegarkan.</p>
-                    <a href="#" class="btn">Beli Sekarang</a>
+                    <img src="https://via.placeholder.com/400x200?text=Jeruk+Belimbing+Tradisi" alt="Jeruk Belimbing Tradisi">
+                    <h3>Jeruk Belimbing Tradisi</h3>
+                    <p>Rasa masam belimbing yang diimbangi gula. Resipi tradisi yang mengimbau kenangan lama.</p>
+                    <span class="price">RM 10.00</span>
+                    <a href="https://wa.me/601121982971?text=Saya%20berminat%20dengan%20Jeruk%20Belimbing%20Tradisi%20(RM10)" class="btn btn-secondary">PESAN VIA WHATSAPP</a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image-placeholder">
-                        Gambar Jeruk Campur
-                    </div>
-                    <h3>Pek Campuran Istimewa</h3>
-                    <p>Cuba semua perisa dalam satu pek! Sesuai untuk hadiah atau jamuan.</p>
-                    <a href="#" class="btn">Beli Sekarang</a>
+                    <img src="https://via.placeholder.com/400x200?text=Jeruk+Mangga+Madu" alt="Jeruk Mangga Madu">
+                    <h3>Jeruk Mangga Madu</h3>
+                    <p>Mangga dijeruk dengan sedikit madu asli. Rasa premium, kurang masam, lebih manis berkualiti.</p>
+                    <span class="price">RM 18.00</span>
+                    <a href="https://wa.me/601121982971?text=Saya%20berminat%20dengan%20Jeruk%20Mangga%20Madu%20(RM18)" class="btn btn-secondary">PESAN VIA WHATSAPP</a>
                 </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x200?text=Pek+Campuran+Mini" alt="Pek Campuran Jeruk Mini">
+                    <h3>Pek Campuran Jeruk Mini</h3>
+                    <p>Pilihan semua jeruk dalam pek mini. Sesuai untuk hadiah atau mencuba semua perisa popular!</p>
+                    <span class="price">RM 25.00</span>
+                    <a href="https://wa.me/601121982971?text=Saya%20berminat%20dengan%20Pek%20Campuran%20Mini%20(RM25)" class="btn btn-secondary">PESAN VIA WHATSAPP</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Apa Kata Pelanggan Kami?</h2>
+            <div class="testimonial-card">
+                <p>"Jeruk Mangga Asli Pak Abu memang tak pernah mengecewakan. Rangup, masam manis dia betul-betul kena! Tak sempat nak simpan lama, habis sebotol dalam sehari."</p>
+                <span class="customer-name">— Puan Salmah, Kuala Terengganu</span>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2>📞 Hubungi Pak Abu</h2>
-            <p>Ada soalan, pesanan khas, atau berminat menjadi pengedar? Kami sedia membantu!</p>
+        <div class="container contact-content">
             
             <div class="contact-info">
-                <a href="tel:+60123456789">☎️ Telefon: +60 12-345 6789</a>
+                <h3>Hubungi Kami</h3>
+                <a href="tel:01121982971">📞 Telefon: 011-21982971</a>
                 <a href="mailto:sales@pakabujeruk.com">📧 Emel: sales@pakabujeruk.com</a>
-                <p>📍 **Alamat Kilang/Pejabat:** [Masukkan alamat penuh di Terengganu di sini]</p>
+                
+                <p class="address">📍 **Alamat Kedai/Pejabat:**<br> [Sila masukkan alamat penuh anda di Terengganu di sini]</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@mycody_film1" target="_blank" title="TikTok Jeruk Pak Abu">🎶</a> 
+                    <a href="https://wa.me/601121982971" target="_blank" title="WhatsApp Jeruk Pak Abu">💬</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Tinggalkan Mesej Ringkas</h3>
+                <form action="mailto:sales@pakabujeruk.com" method="post" enctype="text/plain">
+                    <input type="text" name="Nama" placeholder="Nama Penuh Anda" required>
+                    <input type="email" name="Email" placeholder="Emel Anda" required>
+                    <textarea name="Mesej" placeholder="Mesej / Pertanyaan Anda..."></textarea>
+                    <button type="submit" class="btn">Hantar Mesej</button>
+                </form>
+                <small style="display: block; margin-top: 10px; color: #777;">*Borang ini akan membuka aplikasi emel peranti anda.</small>
             </div>
 
         </div>
@@ -367,7 +532,11 @@
 
     <footer>
         <div class="container">
-            &copy; 2025 Pak Abu Jeruk. Dibuat dengan cinta dari <span>Terengganu</span>.
+            <p>&copy; 2025 Jeruk Pak Abu. Hak Cipta Terpelihara. Dibuat dengan cinta di Terengganu.</p>
+            <div class="footer-social">
+                <a href="https://www.tiktok.com/@mycody_film1" target="_blank" title="TikTok">TikTok</a> | 
+                <a href="tel:01121982971" title="Telefon">011-21982971</a>
+            </div>
         </div>
     </footer>
 
